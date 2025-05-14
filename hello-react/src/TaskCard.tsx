@@ -1,24 +1,28 @@
 import './TaskCard.css'
 
-const TaskCard = (props) => {
-  if(props.flag === "pending"){
+interface TaskCardProps {
+  title: string;
+  dueDate?: string;
+  completedAtDate?: string;
+  assigneeName: string;
+}
+
+const TaskCard = (props: TaskCardProps) => {
+  let displayDate = ""
+  if(props.dueDate){
+     displayDate ="Due on: " + props.dueDate;
+  }
+  else {
+    displayDate = "Completed on: "+ props.completedAtDate;
+  }
+  
   return (
-    <div class="TaskItem">
+    <div className="TaskItem">
       <h2 className="text-xl font-bold">{props.title}</h2>
-      <p>Due on: {props.duedate}</p>
-      <p>Assignee: {props.assignee}</p>
+      <p> {displayDate}</p>
+      <p>Assignee: {props.assigneeName}</p>
     </div>  
   )
-  }
-  else if(props.flag === "done"){
-    return (
-        <div class="TaskItem">
-          <h2 className="text-xl font-bold">{props.title}</h2>
-          <p>Completed on: {props.completedate}</p>
-          <p>Assignee: {props.assignee}</p>
-        </div>
-    )
-  }
 }
 
 export default TaskCard;

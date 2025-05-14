@@ -11,14 +11,14 @@ function App() {
       <div className="grid grid-cols-2 gap-8 p-8">
       <div className="border rounded p-4 border-lime-700 ">
         <h1>Pending</h1>
-        <TaskCard title = "Build the website with static content" duedate="10th Aug" assignee="Sriharsh" flag="pending"/>
-        <TaskCard title = "Prepare for inteview" duedate="11th Aug" assignee="Sriharsh" flag="pending"/>
-      </div>
+        <TaskCard title = "Build the website with static content" dueDate="10th Aug" assigneeName="Dhia" />
+        <TaskCard title = "Prepare for inteview" dueDate="11th Aug" assigneeName="Dhia" />
+        </div>
       <div className="border rounded p-4 border-lime-700">  
         <h1>Done</h1>
-        <TaskCard title = "Submit The project" completedate="7th Aug" assignee="Sriharsh" flag="done"/>
-        <TaskCard title = "Driving classes application" completedate="1st Aug" assignee="Sriharsh" flag="done"/>
-      </div>
+        <TaskCard title = "Submit The project" completedAtDate="7th Aug" assigneeName="Dhia" />
+        <TaskCard title = "Driving classes application" completedAtDate="1st Aug" assigneeName="Dhia" />
+        </div>
       </div>
     </>
   )
