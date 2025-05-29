@@ -1,6 +1,12 @@
 export interface TaskItem {
-    id: string;
-    title: string;
-    dueDate: string;
-    description: string;
-  }
+  title: string;
+  description?: string;
+  dueDate: string;
+  id: string;
+}
+
+export interface NewTaskItem {
+  title: string;
+  description?: string;
+  dueDate: string;
+}
