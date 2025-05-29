@@ -9,8 +9,12 @@ function Signin() {
 
   function handleSignin(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    console.log("SIGNIN");
+
     if (username === "admin" && password === "admin") {
       localStorage.setItem("authenticated", "true");
+      console.log("SET LS");
+
       navigate("/home");
     } else {
       alert("Invalid username or password");

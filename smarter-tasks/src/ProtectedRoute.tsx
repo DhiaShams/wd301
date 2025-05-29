@@ -1,11 +1,15 @@
 import type { JSX } from "react";
 import { Navigate } from "react-router-dom";
 
-export default function ProtectedRoute({ children }: { children: JSX.Element }) {
+export default function ProtectedRoute({
+  children,
+}: {
+  children: JSX.Element;
+}) {
   const authenticated = localStorage.getItem("authenticated");
-  if (authenticated === 'true') {
+  if (authenticated === "true") {
     return <>{children}</>;
   } else {
     return <Navigate to="/signin" />;
- }
+  }
 }

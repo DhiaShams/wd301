@@ -1,26 +1,19 @@
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Notfound = () => {
-  const redirect = useNavigate();
+const NotFound: React.FC = () => {
   return (
-    <div className="flex flex-col justify-center items-center m-10">
-      <div className="text-center text-4xl font-bold text-red-500">Oops!</div>
-      <div className="flex flex-col justify-center items-center mt-5 border border-red-500 p-6 rounded-lg">
-        <label className="text-center text-xl font-semibold">
-          We couldn't find the page you're looking for.
-        </label>
-        <p className="text-center text-gray-600 mt-3">
-          It seems like the page you're trying to access does not exist.
-        </p>
-        <button id="backToHomeButton"
-          className="mt-5 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors duration-300"
-          onClick={() => redirect("/home")}
-        >
-          Go Back Home
-        </button>
-      </div>
+    <div>
+      <p>404 Not Found</p>
+      <Link
+        to="/home"
+        id="backToHomeButton"
+        className="inline-block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Go Home
+      </Link>
     </div>
   );
 };
 
-export default Notfound;
+export default NotFound;
